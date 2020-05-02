@@ -2,8 +2,8 @@ patch kernel & install dependencies:
 
 ```
 apt-get install build-essential git ncurses-dev gcc-arm-linux-gnueabihf bc kmod
-mkdir -p $HOME/projects/mahalia
-git clone git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git $HOME/projects/mahalia/mahalia-kernel
+mkdir -p $HOME/projects/mahalia 
+git clone  https://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git $HOME/projects/mahalia/mahalia-kernel
 cd $HOME/projects/mahalia/mahalia-kernel
 git checkout origin/ti-rt-linux-4.14.y -b ti-rt-linux-4.14.y-cape4all
 copy in 0001-cape4all-driver-V4.patch
