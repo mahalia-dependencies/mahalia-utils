@@ -3,18 +3,23 @@ patch kernel & install dependencies:
 ```
 apt-get install build-essential git ncurses-dev gcc-arm-linux-gnueabihf bc kmod
 mkdir -p $HOME/projects/mahalia 
-git clone  https://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git $HOME/projects/mahalia/mahalia-kernel
+git clone git@github.com:mahalia-dependencies/mahalia-kernel $HOME/projects/mahalia/mahalia-kernel
 cd $HOME/projects/mahalia/mahalia-kernel
-git checkout origin/ti-rt-linux-4.14.y -b ti-rt-linux-4.14.y-cape4all
-copy in 0001-cape4all-driver-V4.patch
-git apply --reject --whitespace=fix 0001-cape4all-driver-V4.patch
+git checkout ti-rt-linux-4.14.y-cape4all
+# Branch ti-rt-linux-4.14.y-cape4all follows branch ti-rt-linux-4.14.y from
+# https://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git and additionally
+# contains the Cape4all driver from 0001-cape4all-driver-V4.patch and some
+# later modifications.  If branch ti-rt-linux-4.14.y sees further development
+# at the git.ti.com repository, then we should be able to merge those changes
+# into our branch.
 make distclean
 ./ti_config_fragments/defconfig_builder.sh -t ti_sdk_am3x_rt_release
 ARCH=arm make ti_sdk_am3x_rt_release_defconfig
-ARCH=arm make menuconfig
+# Instead of  ARCH=arm make menuconfig  we can copy an existing .config:
+cp cape4all_config .config
 ```
 
-Navigate thru menuconfig:
+This is how we used menuconfig before:
 
 ```
 Setup real-time Kernel:

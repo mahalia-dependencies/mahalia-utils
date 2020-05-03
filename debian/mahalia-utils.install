@@ -6,20 +6,21 @@ kernel/*.dtb boot
 #kernel/modules.tar.gz usr/share/mahalia-utils
 kernel/modules/lib/modules lib
 
-conf/hostapd.conf etc/hostapd
-conf/dnsmasq.conf etc/dnsmasq.d
-conf/sysctl.conf etc/sysctl.d
+# All following files have moved to mahalia-extras package
+#conf/hostapd.conf etc/hostapd
+#conf/dnsmasq.conf etc/dnsmasq.d
+#conf/sysctl.conf etc/sysctl.d
 
-motd usr/share/mahalia-utils
-mahalia usr/share/mahalia-utils
-mahalia-flasher usr/share/mahalia-utils
-mahalia-setup usr/share/mahalia-utils
-mahalia-batcat usr/share/mahalia-utils
-functions.sh usr/share/mahalia-utils
+#motd usr/share/mahalia-utils
+#mahalia usr/share/mahalia-utils
+#mahalia-flasher usr/share/mahalia-utils
+#mahalia-setup usr/share/mahalia-utils
+#mahalia-batcat usr/share/mahalia-utils
+#functions.sh usr/share/mahalia-utils
 
-config etc/mahalia
-cape4all.alsactl.state etc/mahalia
+#config etc/mahalia
+#cape4all.alsactl.state etc/mahalia
 
-mha-test.cfg etc/mahalia
-mha-matrixmixer.cfg etc/mahalia
-mha-dynamiccompressor.cfg etc/mahalia
+#mha-test.cfg etc/mahalia
+#mha-matrixmixer.cfg etc/mahalia
+#mha-dynamiccompressor.cfg etc/mahalia
